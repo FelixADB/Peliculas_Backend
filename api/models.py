@@ -6,6 +6,7 @@ class Genero(models.Model):
     descripcion = models.TextField(blank=True, null=True)
     popularidad = models.IntegerField(default=0)
     fecha_creacion = models.DateField(auto_now_add=True)
+    icono = models.ImageField(upload_to='generos_iconos/', blank=True, null=True)
 
     def __str__(self):
         return self.nombre
