@@ -63,9 +63,11 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
-    "https://peliculas-frontend.onrender.com",
 ]
 
+RENDER_FRONTEND_URL = os.environ.get('CORS_ALLOWED_ORIGINS')
+if RENDER_FRONTEND_URL:
+    CORS_ALLOWED_ORIGINS.append(RENDER_FRONTEND_URL)
 ROOT_URLCONF = 'peliculas_backend.urls'
 
 TEMPLATES = [
